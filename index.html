@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Nubomind Quiz - Qualificação de Leads</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Nubomind</span>
+            </div>
+            <div class="nav-stats">
+                <div class="stat-item">
+                    <i class="fas fa-trophy"></i>
+                    <span id="highScore">0</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-gamepad"></i>
+                    <span id="gamesPlayed">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content - Single Fold -->
+    <main class="main-content">
+        <!-- Loading Screen -->
+        <div class="loading-screen" id="loadingScreen">
+            <div class="welcome-text">
+                <span class="typing-text" id="loadingText"></span>
+                <span class="cursor">|</span>
+            </div>
+        </div>
+
+        <!-- Quiz Dialog Box -->
+        <div class="quiz-overlay" id="quizOverlay" style="display: none;">
+            <div class="dialog-box" id="dialogBox">
+                <!-- Dialog Header -->
+                <div class="dialog-header">
+                    <div class="dialog-title">
+                        <span class="dialog-icon">🎮</span>
+                        <span class="dialog-text">Nubomind</span>
+                    </div>
+                    <div class="dialog-controls">
+                        <div class="control-btn minimize">─</div>
+                        <div class="control-btn maximize">□</div>
+                        <div class="control-btn close" onclick="closeQuiz()">×</div>
+                    </div>
+                </div>
+                
+                <!-- Dialog Content -->
+                <div class="dialog-content">
+                    <!-- Welcome Screen -->
+                    <div class="dialog-screen" id="welcomeScreen">
+                        <div class="dialog-message">
+                            <span class="typing-text" id="welcomeText"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                        <div class="dialog-options" id="welcomeOptions" style="display: none;">
+                            <button class="dialog-btn" onclick="beginQuiz()">▶️ COMEÇAR</button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Quiz Screen -->
+                    <div class="dialog-screen" id="quizScreen" style="display: none;">
+                        <div class="quiz-info">
+                            <div class="quiz-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progressFill"></div>
+                                </div>
+                            </div>
+                            <div class="quiz-stats">
+                                <div class="stat">
+                                    <i class="fas fa-star"></i>
+                                    <span id="currentScore">0</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span id="timer">30</span>s
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question-container">
+                            <div class="question-text">
+                                <span class="typing-text" id="questionText"></span>
+                                <span class="cursor">|</span>
+                            </div>
+                            <div class="question-options" id="questionOptions">
+                                <!-- Options will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-controls">
+                            <button class="dialog-btn" onclick="previousQuestion()" id="prevBtn" disabled>⬅️ ANTERIOR</button>
+                            <button class="dialog-btn" onclick="nextQuestion()" id="nextBtn">PRÓXIMA ➡️</button>
+                        </div>
+                    </div>
+
+                    <!-- Results Screen -->
+                    <div class="dialog-screen" id="resultsScreen" style="display: none;">
+                        <div class="dialog-message">
+                            <span class="typing-text" id="resultsText"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                        <div class="results-details" id="resultsDetails" style="display: none;">
+                            <div class="result-item">
+                                <span class="result-label">PONTUAÇÃO:</span>
+                                <span class="result-value" id="finalScore">0</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">ACERTOS:</span>
+                                <span class="result-value" id="correctAnswers">0/10</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">PRECISÃO:</span>
+                                <span class="result-value" id="accuracy">0%</span>
+                            </div>
+                        </div>
+                        <div class="dialog-options" id="resultsOptions" style="display: none;">
+                            <button class="dialog-btn" onclick="restartQuiz()">🔄 JOGAR NOVAMENTE</button>
+                            <button class="dialog-btn" onclick="closeQuiz()">❌ FECHAR</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
