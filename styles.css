@@ -26,6 +26,9 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 .container {
@@ -1264,73 +1267,397 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* General Layout */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Navigation */
+    .nav-container {
+        padding: 10px 15px;
+    }
+    
+    .nav-logo .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    .nav-stats {
+        gap: 15px;
+    }
+    
+    .nav-stats .stat-item {
+        font-size: 0.8rem;
+    }
+    
+    /* Loading Screen */
+    .welcome-text {
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+    
+    /* Dialog Box */
     .dialog-box {
         width: 95%;
-        margin: 20px;
+        margin: 10px;
+        max-height: 90vh;
+    }
+    
+    .dialog-header {
+        padding: 10px 15px;
+    }
+    
+    .dialog-title {
+        font-size: 1rem;
     }
     
     .dialog-content {
         padding: 15px;
+        max-height: 70vh;
     }
     
     .dialog-message {
         font-size: 1rem;
+        line-height: 1.5;
+        min-height: 60px;
     }
     
+    .typing-text {
+        font-size: 1rem;
+    }
+    
+    .cursor {
+        width: 6px;
+        height: 14px;
+    }
+    
+    /* Buttons */
     .dialog-btn {
-        font-size: 0.8rem;
-        padding: 12px 18px;
-    }
-    
-    .text-input-field {
         font-size: 0.9rem;
-        padding: 0.8rem;
+        padding: 12px 18px;
+        margin: 5px 0;
     }
     
-
-    
-    .quiz-info {
-        flex-direction: column;
+    .dialog-options {
         gap: 10px;
     }
     
+    /* Quiz Elements */
+    .quiz-info {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .quiz-progress {
+        width: 100%;
+    }
+    
     .progress-bar {
-        width: 150px;
+        width: 100%;
+        height: 6px;
     }
     
     .quiz-stats {
-        justify-content: center;
+        justify-content: space-around;
+        gap: 15px;
+    }
+    
+    .stat {
+        font-size: 0.9rem;
+    }
+    
+    .question-text {
+        font-size: 1rem;
+        line-height: 1.4;
+        min-height: 60px;
+    }
+    
+    .question-options {
+        gap: 10px;
+    }
+    
+    .option-btn {
+        font-size: 0.9rem;
+        padding: 12px 15px;
+        margin: 5px 0;
+    }
+    
+    /* Text Input */
+    .text-input-field {
+        font-size: 0.9rem;
+        padding: 12px;
+        margin: 5px 0;
+    }
+    
+    /* Quiz Controls */
+    .quiz-controls {
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    /* Results */
+    .results-details {
+        gap: 10px;
+        margin: 15px 0;
+        padding: 10px;
+    }
+    
+    .result-item {
+        font-size: 0.9rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .result-label {
+        font-size: 0.9rem;
+    }
+    
+    .result-value {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
+    /* General Layout */
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Navigation */
+    .nav-container {
+        padding: 8px 10px;
+    }
+    
+    .nav-logo .logo-text {
+        font-size: 1rem;
+    }
+    
+    .nav-stats {
+        gap: 10px;
+    }
+    
+    .nav-stats .stat-item {
+        font-size: 0.7rem;
+    }
+    
+    /* Loading Screen */
+    .welcome-text {
+        font-size: 1.2rem;
+        padding: 0 15px;
+    }
+    
+    /* Dialog Box */
     .dialog-box {
         width: 98%;
-        margin: 10px;
+        margin: 5px;
+        max-height: 95vh;
+    }
+    
+    .dialog-header {
+        padding: 8px 10px;
+    }
+    
+    .dialog-title {
+        font-size: 0.9rem;
     }
     
     .dialog-content {
         padding: 10px;
+        max-height: 75vh;
     }
     
     .dialog-message {
         font-size: 0.9rem;
+        line-height: 1.4;
+        min-height: 50px;
+    }
+    
+    .typing-text {
+        font-size: 0.9rem;
+    }
+    
+    .cursor {
+        width: 5px;
+        height: 12px;
+    }
+    
+    /* Buttons */
+    .dialog-btn {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+        margin: 3px 0;
+    }
+    
+    .dialog-options {
+        gap: 8px;
+    }
+    
+    /* Quiz Elements */
+    .quiz-info {
+        padding: 8px;
+        gap: 8px;
+    }
+    
+    .progress-bar {
+        height: 5px;
+    }
+    
+    .quiz-stats {
+        gap: 10px;
+    }
+    
+    .stat {
+        font-size: 0.8rem;
+    }
+    
+    .question-text {
+        font-size: 0.9rem;
+        line-height: 1.3;
+        min-height: 50px;
+    }
+    
+    .question-options {
+        gap: 8px;
+    }
+    
+    .option-btn {
+        font-size: 0.8rem;
+        padding: 10px 12px;
+        margin: 3px 0;
+    }
+    
+    /* Text Input */
+    .text-input-field {
+        font-size: 0.8rem;
+        padding: 10px;
+        margin: 3px 0;
+    }
+    
+    /* Quiz Controls */
+    .quiz-controls {
+        gap: 8px;
+        margin-top: 10px;
+    }
+    
+    /* Results */
+    .results-details {
+        gap: 8px;
+        margin: 10px 0;
+        padding: 8px;
+    }
+    
+    .result-item {
+        font-size: 0.8rem;
+        gap: 3px;
+    }
+    
+    .result-label {
+        font-size: 0.8rem;
+    }
+    
+    .result-value {
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+    .dialog-box {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .dialog-content {
+        padding: 8px;
+    }
+    
+    .dialog-message {
+        font-size: 0.85rem;
+    }
+    
+    .typing-text {
+        font-size: 0.85rem;
     }
     
     .dialog-btn {
-        font-size: 0.7rem;
-        padding: 10px 15px;
+        font-size: 0.75rem;
+        padding: 8px 12px;
+    }
+    
+    .option-btn {
+        font-size: 0.75rem;
+        padding: 8px 10px;
     }
     
     .text-input-field {
-        font-size: 0.8rem;
-        padding: 0.7rem;
+        font-size: 0.75rem;
+        padding: 8px;
     }
     
+    .nav-logo .logo-text {
+        font-size: 0.9rem;
+    }
+    
+    .welcome-text {
+        font-size: 1rem;
+    }
+}
 
+/* Landscape Orientation for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .dialog-box {
+        max-height: 85vh;
+    }
+    
+    .dialog-content {
+        max-height: 60vh;
+    }
+    
+    .welcome-text {
+        font-size: 1.3rem;
+    }
+    
+    .quiz-info {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .quiz-stats {
+        justify-content: flex-end;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .dialog-btn,
+    .option-btn,
+    .text-input-field {
+        border-width: 1px;
+    }
     
     .progress-bar {
-        width: 120px;
+        border-width: 1px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .dialog-btn,
+    .option-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .text-input-field {
+        min-height: 44px;
+    }
+    
+    .control-btn {
+        width: 20px;
+        height: 20px;
+        font-size: 0.8rem;
     }
 }
 
